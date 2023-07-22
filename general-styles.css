@@ -1,0 +1,213 @@
+:root{
+    /* Primary */
+    --LinearGradientActiveBorder: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+    --RedError: hsl(0, 100%, 66%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --LightGrayishViolet: hsl(270, 3%, 87%);
+    --DarkGrayishViolet: hsl(279, 6%, 55%);
+    --VeryDarkViolet: hsl(278, 68%, 11%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Elements */
+html{
+    font-size: 18px;
+}
+
+body{
+    min-height: 100vh;
+}
+
+form{
+    max-width: 500px;
+}
+
+label, input{
+    display: block;
+}
+
+input{
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: var(--LightGrayishViolet);
+    outline: none;
+}
+
+input:invalid{
+    border-color: var(--RedError);
+}
+
+input:focus{
+    border-color: hsl(278, 94%, 30%);
+}
+
+input:valid{
+    border-color:hsl(249, 99%, 64%);
+}
+
+button{
+    display: block;
+    margin: 1.5rem auto;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 10px;
+    border: none;
+    color: var(--White);
+    background-color: var(--VeryDarkViolet); 
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+input:invalid .error-message{
+    display:inline-block;
+}
+
+
+/* Container */
+.form-container, .success-container{
+    margin: 20vh auto;
+}
+
+/* CARDS */
+.card-background{
+    background-image: url("https://julie-gz.github.io/hosted-images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-front{
+    background-image: url("https://julie-gz.github.io/hosted-images/bg-card-front.png");
+}
+
+.card-back{
+    background-image: url("https://julie-gz.github.io/hosted-images/bg-card-back.png");
+}
+
+.card-front, .card-back{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card-logo, .credit-card-cvc{
+    display: block;
+}
+
+.card-logo{
+    height: 15%;
+    width: auto;
+    margin-bottom: 1.2em;
+    position: absolute;
+    top: 10%;
+    left: 1rem;
+}
+
+.card-details__name, .card-details__expdate{
+    display: inline-block;
+    width: 50%;
+    font-size: 0.7em;
+    font-weight: 200;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+}
+
+
+.card-details__name, .card-details__expdate, .card-details__number, .card-back__cvc{
+    color: var(--White);
+    font-size: min(2vw,18px);
+    letter-spacing: 0.3vw;
+    white-space: nowrap;
+}
+
+.card-details__name{
+    text-align: left;
+    left: 0;
+} 
+
+.card-details__expdate{
+    text-align: right;
+    right: 0;
+}
+
+.card-details__number{
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: min(4vw, 20px)
+}
+
+.card-back__cvc{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3rem;
+    padding: 1rem;
+}
+
+/* Form */
+.form-information__name, .form-information__number, .form-information__expdate, .form-information__cvc{
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.form-information{
+    margin-bottom: 1rem;
+}
+
+.form-information:nth-child(3), .form-information:nth-child(4), input[id="month"], input[id="year"], input[id="cvc"]{
+    display: inline-block;
+}
+
+.form-information:nth-child(3), .form-information:nth-child(4){
+    width: 49%;
+}
+
+input[id="month"], input[id="year"]{
+    display: inline;
+    width: 45%;
+}
+
+/* Success */
+.success-container{
+    display: none;
+    text-align: center;
+}  
+
+/* Error message */
+.error-message{
+    color: var(--RedError);
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* ATTRIBUTION */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}

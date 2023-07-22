@@ -1,0 +1,65 @@
+/* CREDIT CARD */
+.card-background{
+    height: 40vh;
+    width: 100%;
+}
+
+.card-front, .card-back{
+    width: 55vw;
+    height: 30vw;
+}
+
+.card-front{
+    top: 20vh;
+    left: 10vw;
+    z-index: 1;
+}
+
+.card-back{
+    top: -35vh;
+    left: 40vw;
+}
+
+/* FORM */
+.form-container{
+    max-width:  300px;
+    margin: 2rem auto;
+}
+
+/* Media queries */
+@media  screen and (min-width: 481px) and (max-width: 768px) {
+    .card-background{
+        height: 30vh;
+        width: 100%;
+    }
+
+    .card-front{
+        top: 15vh;
+        left: 10vw;
+        z-index: 1;
+    }
+    
+    .card-back{
+        top: -25vh;
+        left: 40vw;
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    .card-background{
+        height: 20vh;
+        width: 100%;
+    }
+
+    .card-front{
+        top: 10vh;
+        left: 10vw;
+        z-index: 1;
+    }
+    
+    .card-back{
+        top: -15vh;
+        left: 40vw;
+    }
+}
