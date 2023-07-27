@@ -1,34 +1,26 @@
 "use strict"
-// Credit Card Input
-const creditCardNumber = document.querySelector("#card-holder-number");
+// Credit Card Information
 const numberOnCreditCard = document.querySelector(".card-details__number");
-
-const creditCardHolder = document.querySelector("#card-holder-name");
 const nameOnCreditCard = document.querySelector(".card-details__name");
-
-const creditCardCVC = document.querySelector("#cvc");
 const cvcOnCreditCard = document.querySelector(".card-back__cvc");
-
-const creditCardExpMonth = document.querySelector("#month");
 const expMonthOnCreditCard = document.querySelector(".month");
-
-const creditCardExpYear = document.querySelector("#year");
 const expYearOnCreditCard = document.querySelector(".year");
 
 // Error Messages
 const creditNumberError = document.querySelector(".credit-number-error");
 const expiryDateError = document.querySelector(".expiry-date-error");
-const cvcError = document.querySelector("cvc-error");
+const cvcError = document.querySelector(".cvc-error");
 
 // Containers
-const form = document.querySelector(".form-container");
-const successWindow = document.querySelector(".success-container");
+const formContainer = document.querySelector(".form-container");
+const successContainer = document.querySelector(".success-container");
 
 // Inputs
 const inputFields = document.querySelectorAll("input");
 
-// Confirm Button
-const confirmBtn = document.querySelector(".confirm");
+// Buttons
+const confirmBtn = document.querySelector(".form-confirm-btn");
+const continueBtn = document.querySelector(".continue-btn");
 
 //Event Listeners
 inputFields.forEach(i => {
@@ -85,25 +77,40 @@ inputFields.forEach(i => {
     });
 });
 
-form.addEventListener("submit", formvalidation);
+
+confirmBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    formvalidation(e);
+});
+
+continueBtn.addEventListener("click", function () {
+    formContainer.style.display = "block";
+    successContainer.style.display = "none";
+})
 
 // Functions
 function success() {
-    form.style.display = "none";
-    successWindow.style.display = "block";
+    formContainer.style.display = "none";
+    successContainer.style.display = "block";
 }
 
 function formvalidation(e) {
-    let inputs = form.querySelector("input");
-
-    inputs.forEach(input => {
-        if (!input.checkValidity()) {
-            input.classList.add('invalid');
-            input.style.borderColor = "#ff5252";
+    let allFields = true;
+    inputFields.forEach(i => {
+        if (!i.checkValidity()) {
+            i.classList.add('invalid');
+            i.style.borderColor = "#ff5252";
+            allFields = false;
             e.preventDefault();
         } else {
-            input.classList.remove('invalid');
-            success();
+            i.style.borderColor = "#600594"
+            i.classList.remove('invalid');
         }
     });
+
+    if (allFields) {
+        success();
+    } else {
+        e.preventDefault();
+    }
 }

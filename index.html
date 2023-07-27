@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="form-container">
-      <form action="\" method="post">
+      <form action="" method="post">
         <div class="form-information">
           <label class="form-information__name" for="card-holder-name">Cardholder Name</label>
           <input id="card-holder-name" name="card-holder-name" aria-labelledby="card-holder-name" type="text" placeholder="e.g. Jane Appleseed" required> 
@@ -60,15 +60,15 @@
           <input id="cvc" name="cvc" aria-labelledby="cvc" type="text" inputmode="numeric" pattern="\d{3}" placeholder="e.g. 123" maxlength="3" required>
           <span class="error-message cvc-error" role="alert" aria-live="assertive">Can't be blank</span>
         </div>
-        <button type="submit" href="\" class="form-confirm">Confirm</button>
+        <button type="submit" class="form-confirm-btn">Confirm</button>
       </form>
     </div>
 
     <div class="success-container">
-      <img class="success-icon" src="https://julie-gz.github.io/hosted-images/icon-complete.svg" alt="Blue circle with a blue tick in the center">
+      <img class="success-icon" src="https://julie-gz.github.io/hosted-images/icon-complete.svg" alt="Blue circle with a white checkmark in the center">
       <h2 class="success-message">Thank you!</h2> 
       <p class="confirmation-message">We've added your card details</p>
-      <button href="#">Continue</button>
+      <button class="continue-btn"><a href="#">Continue</a></button>
     </div>
   </main> 
   <div class="attribution">
